@@ -1,0 +1,24 @@
+一、Angular_CSS：
+    注意：Component.css僅用於組件，src根目錄下的style.css為全局的樣式。
+
+二、Angular 模板語法：
+    - Angular為MVVM設計模式。
+    - MVVM設計模式起源於MVC。
+        - MVC：
+            M → model：數據(模型)/狀態。
+            V → view：視圖 (模板+變量+數據 → 交互)。
+            C → control：控制器：交互修改數據的方式。
+
+            ※ 數據(M)決定視圖(V)樣式，視圖(V)的交互決定控制器(C)修改數據(M)。
+                Control
+                ↙   ↖
+            Model  →  View
+
+        - MVVM：Angular的設計模式
+            - M → model：數據(模型)/狀態。
+            - V → view：視圖 (模板+變量+數據 → 交互)。
+            - VM → ViewModel：框架，對數據和視圖的雙向綁定，只要修改數據(M)，VM就會自動改變視圖(V)，視圖(V)的交互
+                         改變了數據(M)。
+
+                   雙向數據綁定             Ajax  Json
+            View  ←———————————→  ViewModel  --→   ←--  Model

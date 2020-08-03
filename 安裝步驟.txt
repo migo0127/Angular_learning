@@ -1,0 +1,18 @@
+● typescript安裝步驟：
+1.安裝環境：
+npm i -g typescript
+
+2.將ts文件編譯成js：
+tsc xxx.ts
+
+
+● Angular安裝步驟：
+
+1.安裝環境：
+npm install -g @angular/cli
+
+2.安裝項目：
+ng new 項目名稱(自定義)
+
+3.執行：
+npm start

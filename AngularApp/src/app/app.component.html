@@ -1,0 +1,47 @@
+<!--
+    ● Angular插值：
+        - 語法：{{..變量和表達式}}
+        - 應用：應用於html內容裡，也可以應用於property裡。
+        - 例一：html內容裡
+            <h1>{{title}}</h1>
+            <p>1+1={{1+1}}</p>
+            <h2>3+4={{sum(3,4)}}</h2>
+
+        - 例二：property裡
+            <button class="{{classStr}}"></button>
+
+        - 例三：自定義屬性插入方式：
+            <h3 [attr.data-index]="1">自定義屬性插入方式</h3>
+
+            <h3 [data-index]="1">錯誤方式</h3> // 報錯
+
+        - 例四：綁定html自帶的屬性：
+            <h3 [class]="bgblue"></h3>
+
+            <div [innerHtml]='htmlES6'></div>
+            <div [innerHtml]='htmlES5'></div>
+            <div [innerHtml]='script'></div>
+
+ -->
+<!-- Angular插值： -->
+<!-- 一、html內容裡 -->
+<h1>{{title}}</h1>
+<p>1+1={{1+1}}</p>
+<h2>3+4={{sum(3,4)}}</h2>
+
+
+<!-- 二、property裡 -->
+<button class="{{classStr}}">按鈕</button>
+
+
+<!-- 三、自定義屬性插入方式：-->
+<h3 [attr.data-index]="1">自定義屬性插入方式：[attr.data-index]="1"</h3>
+
+
+<!-- 四、綁定html自帶的屬性： -->
+<h3 [class]="bgPink">綁定html自帶的屬性：[class]="bgblue"</h3>
+
+<div [innerHtml]='htmlES6'></div>
+
+<div [innerHtml]='htmlES5'></div>
+<div [innerHtml]='script'></div>
