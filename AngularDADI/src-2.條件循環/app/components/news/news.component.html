@@ -1,0 +1,87 @@
+<h1>● 這是news.component</h1>
+<p>{{msg}}</p>
+<br />
+<br />
+<span>● public student:string = 'DL';</span>
+<h1>{{student}}</h1>
+<br />
+<br />
+<span>● public userInfo:object</span>
+<h1>{{userInfo}}</h1>
+<br />
+<br />
+<span>● public message:string;</span>
+<h1>{{message}}</h1>
+<br />
+<br />
+<span>● title='我是一個 h1'</span>
+<h1 title='我是一個 h1'>滑鼠描上去看一下</h1>
+<br />
+<br />
+<span>● title='我是一個 h1'</span>
+<h1 title='我是一個 h1'>滑鼠描上去看一下</h1>
+<br />
+<br />
+<span>● public title:string = '我是一個title屬性';</span>
+<h1 [title]='title'>滑鼠描上去看一下2</h1>
+<br />
+<br />
+<span>● 我是一個html標籤(h2)</span>
+<div>{{content}}</div>
+<br />
+<br />
+<span>● 我是一個html標籤(h2)→[innerHTML]='content'</span>
+<div [innerHTML]='content'></div>
+<br />
+<br />
+<span>● 1+1 = {{1+1}}</span>
+<br />
+<br />
+<span>● Angular裡面的數據循環</span>
+<ul>
+    <li *ngFor='let item of arr'>
+        {{item}}
+    </li>
+</ul>
+<hr />
+<ul>
+    <li *ngFor='let item of arr;let i=index'>
+        {{i}}--{{item}}
+    </li>
+</ul>
+<hr />
+<ul>
+    <li *ngFor='let item of list;let key=index'>
+        {{item}}
+    </li>
+</ul>
+<hr />
+<ul>
+    <li *ngFor='let item of items;let key=index'>
+        {{item}}
+    </li>
+</ul>
+<hr />
+<ul>
+    <li *ngFor='let item of userlist'>
+        {{item.username}}---{{item.age}}
+    </li>
+</ul>
+<hr />
+<ul>
+    <li *ngFor='let item of carList'>
+        <h2>{{item.cate}}</h2>
+        <ol>
+            <li *ngFor='let items of item.list'>
+                {{items.title}}--{{items.priece}}
+            </li>
+        </ol>
+    </li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
