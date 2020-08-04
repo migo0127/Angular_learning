@@ -1,0 +1,88 @@
+<!--
+    ● Angular插值：
+        - 語法：{{..變量和表達式}}
+        - 應用：應用於html內容裡，也可以應用於property裡。
+        - 例一：html內容裡
+            <h1>{{title}}</h1>
+            <p>1+1={{1+1}}</p>
+            <h2>3+4={{sum(3,4)}}</h2>
+
+        - 例二：property裡
+            <button class="{{classStr}}"></button>
+
+        - 例三：自定義屬性插入方式：
+            <h3 [attr.data-index]="1">自定義屬性插入方式</h3>
+
+            <h3 [data-index]="1">錯誤方式</h3> // 報錯
+
+        - 例四：綁定html自帶的屬性：
+            <h3 [class]="bgblue"></h3>
+
+            <div [innerHtml]='htmlES6'></div>
+            <div [innerHtml]='htmlES5'></div>
+            <div [innerHtml]='script'></div>
+
+ -->
+<!-- Angular插值： -->
+<!-- 一、html內容裡 -->
+<h1>{{title}}</h1>
+<p>1+1={{1+1}}</p>
+<h2>3+4={{sum(3,4)}}</h2>
+
+
+<!-- 二、property裡 -->
+<button class="{{classStr}}">按鈕</button>
+
+
+<!-- 三、自定義屬性插入方式：-->
+<h3 [attr.data-index]="1">自定義屬性插入方式：[attr.data-index]="1"</h3>
+
+
+<!-- 四、綁定html自帶的屬性： -->
+<h3 [class]="bgPink">綁定html自帶的屬性：[class]="bgblue"</h3>
+
+<div [innerHtml]='htmlES6'></div>
+
+<div [innerHtml]='htmlES5'></div>
+<div [innerHtml]='script'></div>
+
+
+<!-- 五、定義變量的方式：定義的class三種方式，前兩種會自動將變量和原有的HTML calss合併 -->
+<h1 class="abc" class={{classStr}}>class1：變量，合併</h1> <!-- class="acb colorStr" -->
+<h1 class="cab active" [class]="classStr">class2：變量，合併</h1> <!-- class="cba active colorStr" -->
+<!-- 下方的class不會合併 -->
+<h1 class="aaa" [attr.class]="classStr">class3：變量，不合併</h1> <!-- class="colorStr" -->
+
+
+<!-- 六、字符串模式 -->
+<h1 [class]="classStr">class4：變量字符串</h1>
+<h1 class="a" [class]="'abc active'">class5：字符串</h1>
+
+
+<!-- 七、物件模式 -->
+<!-- 物件為true的會顯示出來，false不會顯示出來 -->
+<h1 [class]="classObj">classObj</h1> 
+<h1 [class]="{bgBlue:isShow}">classObj2</h1>
+
+
+<!-- 八、陣列模式 -->
+<h1 [class]="['abc','active','bgBlue']">classArr</h1>
+<h1 [class]="classArr2">classArr2</h1>
+
+
+<!-- 九、style表達式類型 -->
+<h1 [style]="styleStr">styleStr</h1>
+<h1 [style]="styleObj">styleObj</h1>
+<h1 [style.background]='color'>style.background</h1>
+<h1 [style.width.px]='widthNum'>style.width.px</h1>
+
+
+<!-- 
+    十、綁定事件：
+        由等號左側寫上小括號加上事件名稱，右邊寫上調用的事件函數 (事件名稱) = 事件函數。
+-->
+<h1 [style]="styleObj2">點擊事件測試</h1>
+<button (click)="changeColor()">改變事件顏色</button>
+<br />
+<br />
+<button (click)='changeButton($event)'>改變自身按鈕顏色</button>

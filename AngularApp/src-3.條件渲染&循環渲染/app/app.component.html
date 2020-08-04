@@ -1,0 +1,80 @@
+<!-- 條件渲染 -->
+<!-- 一、*ngIf：使用*ngIf條件渲染會移出Document，添加進DOM會消耗性能，故建議一次性渲染使用。-->
+<!-- person如果是台北人，就顯示台北人的信息，反之亦然 --> 
+<span>*ngIf：使用*ngIf條件渲染會移出Document，添加進DOM會消耗性能，故建議一次性渲染使用。</span>
+<br />
+<br />
+<div *ngIf="person == '台北人'">
+    台北人：90萬
+</div>
+
+<div *ngIf='person == "金門人"'>
+    金門人：4萬
+</div>
+
+<hr />
+<!-- 二、style：使用style進行條件渲染，如果需要頻繁切換內容，那麼需要style完全條件渲染，多次使用。 -->
+<span>style：使用style進行條件渲染，如果需要頻繁切換內容，那麼需要style完全條件渲染，多次使用。</span>
+<br />
+<br />
+<div [style.display]="person2=='台北人'?'block':'none'">
+    台北人：90萬
+</div>
+
+<div [style.display]="person2=='金門人'?'block':'none'">
+    金門人：4萬
+</div>
+
+<hr />
+<!-- 
+    三、循環渲染： 
+        1.*ngFor：列表循環        
+-->
+<span>*ngFor：列表循環</span>
+<ul>
+    <li *ngFor="let item of arr">{{item}}</li>
+</ul>
+<hr />
+<!-- 
+        2.*ngFor：列表循環加索引值
+ -->
+ <span>*ngFor：列表循環加索引值</span>
+ <ul>
+     <li *ngFor="let item of arr2;let i = index">{{i}} : {{item}}</li>
+ </ul> 
+ <hr />
+ <!-- 
+        3.*ngFor：將列表的內容傳入事件
+  -->
+  <span>*ngFor：將列表的內容傳入事件，點擊事件</span>
+  <ul>
+      <li *ngFor="let item of arr;let key=index" (click)='chooesPerson(item,key)'>{{item}}</li>
+  </ul>
+  <hr />
+  <!-- 四、*ngFor：循環複雜陣列 -->
+  <span>*ngFor：循環複雜陣列</span>
+  <ul>
+      <li *ngFor="let item of arr3;let i=index">姓名 {{item.name}}，年齡 {{item.age}}， 最愛的是 {{item.hobby}} ~</li>
+  </ul>
+  <hr />
+  <!-- 五、*ngSwitch：匹配多種情況 -->
+  <span>*ngSwitch：匹配多種情況，字符串</span>
+  <br />
+  <br />
+  <div [ngSwitch]="orderState">
+    <div *ngSwitchCase="'DL'">帶雞頭最好看的是...?</div>
+    <div *ngSwitchCase="'AYG'">你這種濾鏡好可怕...?</div>
+    <div *ngSwitchCase="'ZZ'">我平時不喝酒，就怕把你們喝倒...?</div>
+    <div *ngSwitchDefault>可愛滴一朵玫瑰花...?</div>
+  </div>
+  <hr />
+
+  <span>*ngSwitch：匹配多種情況，數值</span>
+  <br />
+  <br />
+  <div [ngSwitch]='orderState2'>
+      <div *ngSwitchCase='1'>ZC</div>
+      <div *ngSwitchCase='9'>FSJ</div>
+      <div *ngSwitchCase='7'>LPJ</div>
+      <div *ngSwitchDefault>WZHF</div>
+  </div>
