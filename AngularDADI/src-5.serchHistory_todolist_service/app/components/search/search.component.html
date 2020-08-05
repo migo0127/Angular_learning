@@ -1,0 +1,14 @@
+<h1>這是search.component</h1>
+
+<div class='search-wrap'>
+  <h2>搜索歷史紀錄</h2>
+  <input type="text" [(ngModel)]="keyword"><button class="search-btn" (click)='doSearch()'>搜索</button>
+  <hr />
+  <ul class='search-history'>
+    <li *ngFor='let item of history;let key=index;'>
+      {{item}}
+      <button class='del-btn' (click)='delHistory(key)'>X</button>
+    </li>
+  </ul>
+
+</div>
