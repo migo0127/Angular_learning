@@ -1,0 +1,38 @@
+<h1>這是form.component</h1>
+
+<h2 class='people-title'>人員登記系統</h2>
+<div class="people-wrap">
+    <div class='people-inner'>
+        <label for="username">姓名：</label>
+        <input type="text" id="username" [(ngModel)]='peopleInfo.username'>
+        
+    </div>
+    <div class='people-inner'l>
+        <label>性別：</label>
+        <input type="radio" name='sex' value='1' id='sex1'[(ngModel)]="peopleInfo.sex">&nbsp;<label for="sex1">男</label>&nbsp;&nbsp;
+        <input type="radio" name='sex' value='2' id='sex2' [(ngModel)]="peopleInfo.sex">&nbsp;<label for="sex2">女</label>        
+    </div>
+    <div class='people-inner'>
+        <label for="city">城市：</label>
+        <select name="city" id="city" [(ngModel)]="peopleInfo.city">
+            <option [value]="item" *ngFor='let item of peopleInfo.citylist'>{{item}}</option>
+        </select>
+    </div>
+    <div class='people-inner'>
+        <label for="興趣">興趣：</label>
+        <span *ngFor='let item of peopleInfo.hobby;let i=index;'>
+            <input type="checkbox" [id]='"check"+i' [(ngModel)]="item.checked"/>&nbsp;<label [for]='"check"+i'>{{item.title}}</label>
+            &nbsp;
+        </span>
+    </div>
+    <div class="people-inner">
+        <label for="textarea">備註：</label>
+        <textarea name="textarea" id="textarea" cols="20" rows="3" [(ngModel)]="peopleInfo.textarea"></textarea>
+    </div>
+
+    <button type='button' class='btn' (click)='getDate()'>送出</button>
+    <pre>
+        {{peopleInfo | json}}
+    </pre>
+
+</div>

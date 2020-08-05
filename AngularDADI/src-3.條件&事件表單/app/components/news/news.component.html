@@ -1,0 +1,99 @@
+<h1>這是new.component</h1>
+
+<h1>● 引入圖片：</h1>
+<img src="assets/images/star_01.svg!png" alt="未收藏">
+<img src="assets/images/star_02.svg!png" alt="未收藏">
+<img src="https://s.yimg.com/cv/apiv2/twfrontpage/logo/TW_desktop_homerun@2x_new.png" alt="yahoo">
+<img [src]='picUrl' alt="yahoo">
+
+<hr />
+<h1>● 條件判斷語句：*ngIf</h1>
+<p>● 當flag為true，顯示收藏，當flag為false，顯示未收藏</p>
+<div  *ngIf='!flag'>
+    <img src="assets/images/star_01.svg!png" alt="未收藏">
+</div>
+<div  *ngIf='flag'>
+    <img src="assets/images/star_02.svg!png" alt="收藏">
+</div>
+<br>
+<h1>● 當key值為1時，新增class='red'，否則不新增</h1>
+<ul>
+    <li *ngFor='let item of list;let key=index;'>
+        <span *ngIf='key==1' class='red'>{{item}}</span>
+        <span *ngIf='key!==1'>{{item}}</span>
+    </li>
+</ul>
+<hr />
+<h1>● 條件判斷語句：[ngSwitch]</h1>
+<div [ngSwitch]='orderStatus'>
+    <div *ngSwitchCase='1'>已付款</div>
+    <div *ngSwitchCase='2'>準備中</div>
+    <div *ngSwitchCase='3'>已出貨</div>
+    <div *ngSwitchCase='4'>已收貨</div>
+    <div *ngSwitchCase='5'>取消訂單</div>
+    <div *ngSwitchDefault>待付款</div>
+</div>
+<hr />
+<h1>● 屬性[ngClass]、[ngStyle]</h1>
+<div class='red'>
+    class='red' (盡量不要用dom來切換class)
+</div>
+<br>
+<div [ngClass]='{"blue":"ture","red":"false"}'>
+    [ngClass]演示1
+</div>
+<br>
+<div [ngClass]='{"blue":flag,"orange":!flag}'>
+    [ngClass]演示2
+</div>
+<br>
+<p>● 循環陣列，[ngClass] 讓陣列第一個元素的樣式為red</p>
+<ul>
+    <li *ngFor='let item of list;let i=index;' [ngClass]='{"red":i===0,"blue":i===1,"orange":i===2}'>
+        {{item}}
+    </li>
+</ul>
+<br>
+<p style="color:red">
+    style="color:red"
+</p>
+<p [ngStyle]='{"color":"blue"}'>[ngStyle]演示1</p>
+<p [ngStyle]="{'color':styleColor}">[ngStyle]演示2</p>
+<hr />
+<h1>● 管道：</h1>
+<p>{{today}}&nbsp;&nbsp;&nbsp;--通過管道(today | date:'yyyy-MM-dd hh:mm ss')轉換為-->&nbsp;&nbsp;&nbsp;{{today | date:'yyyy-MM-dd hh:mm ss'}}</p>
+<hr />
+<h1>● 事件：</h1>
+<button (click)='run()'>執行事件</button>
+<br>
+<p>數據：{{title}}</p>
+<button (click)='setDate()'>執行方法改變數據</button>
+&nbsp;&nbsp;
+<button (click)='getDate()'>執行方法獲得數據</button>
+&nbsp;&nbsp;
+<button (click)='runEvent($event)'>執行方法獲取事件物件</button>
+<hr />
+<h1>● 表單事件、事件物件：</h1>
+<label for="">keydown：</label>
+<input type="text" (keydown)='keyDown($event)'/>
+<br>
+<br>
+<label for="">keyup：</label>
+<input type="text" (keyup)='keyUp($event)'/>
+<hr />
+<h1>● 雙向數據綁定：MVVM，只針對表單</h1>
+<input type="text" [(ngModel)]="keywords"/>
+<p>雙向數據綁定值(keywords)：{{keywords}}</p>
+<br>
+<input type="text" [(ngModel)]="username"/>
+<p>雙向數據綁定值(username 有默認值)：{{username}}</p>
+<br>
+<button (click)="changeUsername()">改變username的值</button>
+&nbsp;&nbsp;
+<button (click)="getUsername()">獲取username的值</button>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
