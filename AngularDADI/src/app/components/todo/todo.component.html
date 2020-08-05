@@ -1,0 +1,26 @@
+<h1>這是todo.component</h1>
+
+<div class='todo-wrap'>
+  <h2>ToDoList</h2>
+  <input type="text" class='todo-inp' [(ngModel)]="keyword" (keyup)='addedTodoItem($event)'>
+  <hr />
+  <ul class='todo-history'>
+    <h3>待辦事項：</h3>
+    <li *ngFor='let item of toDoList;let key=index;' [hidden]='item.status==1'>
+      <input type="checkbox" [(ngModel)]="item.status" (change)='checkboxChange()'/>
+      {{item.title}}
+      <button class='del-btn' (click)='delTodoItem(key)'>X</button>
+    </li>
+
+  </ul>
+
+  <ul class='todo-history'>
+    <h3>已完成事項：</h3>
+    <li *ngFor='let item of toDoList;let key=index;' [hidden]='item.status==0'>
+      <input type="checkbox"  [(ngModel)]="item.status" (change)='checkboxChange()'/>
+      {{item.title}}
+      <button class='del-btn' (click)='delTodoItem(key)'>X</button>
+    </li>
+  </ul>
+
+</div>
