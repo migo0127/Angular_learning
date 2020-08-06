@@ -1,0 +1,15 @@
+<h1>這是news.component</h1>
+<br>
+<br>
+<p>● news(父)引入footer(子)：演示子傳遞父數據及方法【@ViewChild】</p>
+<br>
+<br>
+<button (click)='getChildRun()'>獲取footer(子)的數據與方法</button>
+<br>
+<br>
+<h2>{{title}}</h2>
+<br>
+<p>{{content}} : {{msg}}</p>
+<br>
+<br>
+<app-footer #footer></app-footer>

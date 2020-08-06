@@ -11,12 +11,20 @@ import { FormsModule } from '@angular/forms';
 
 // 根組件與其他組件
 import { AppComponent } from './app.component';
+import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
+import { Lifecycle2Component } from './components/lifecycle2/lifecycle2.component';
+import { Lifecycle3Component } from './components/lifecycle3/lifecycle3.component';
+import { LifecycleAppComponent } from './components/lifecycle-app/lifecycle-app.component';
 
 
 // @NgModule裝飾器：接受一個元數據物件，告訴 Angular 如果編譯和啟動應用
 @NgModule({
   declarations: [  // 配置當前項目運行的組件
     AppComponent,
+    LifecycleComponent,
+    Lifecycle2Component,
+    Lifecycle3Component,
+    LifecycleAppComponent,
   ],
   imports: [ // 配置當前模塊運行依賴的模塊
     BrowserModule,

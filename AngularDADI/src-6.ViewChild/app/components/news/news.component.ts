@@ -35,7 +35,7 @@ export class NewsComponent implements OnInit {
         ngAfterViewInit(){
           this.myBox.nativeElement.xxx(屬性名) = "屬性值";
         }
-  */ 
+  */
   @ViewChild('myBox') myBox:any;
 
   // 獲取子組件header實例
@@ -45,22 +45,22 @@ export class NewsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
   }
 
   ngAfterViewInit() : void {
     console.log(this.myBox.nativeElement);
-    // <div _ngcontent-uyq-c42="">myBox，透過ViewChild獲取DOM節點</div>
+    // <div #myBox>myBox，透過ViewChild獲取DOM節點</div>
 
     console.log(this.myBox.nativeElement.innerHTML);
     // myBox，透過ViewChild獲取DOM節點
-    
+
     console.log("clientHeight",this.myBox.nativeElement.clientHeight);
     // 19
 
     console.log("offsetHeight",this.myBox.nativeElement.offsetHeight);
     // 19
-    
+
   }
 
   // 執行子組件裡的方法run()
@@ -68,6 +68,6 @@ export class NewsComponent implements OnInit {
       this.header.run();
       console.log(this.header);
       console.log(this.header.str);
-      this.string = this.header.str;      
+      this.string = this.header.str;
     }
 }
