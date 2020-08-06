@@ -11,24 +11,25 @@ import { FormsModule } from '@angular/forms';
 
 // 根組件與其他組件
 import { AppComponent } from './app.component';
-import { SearchComponent } from './components/search/search.component';
-import { TodoComponent } from './components/todo/todo.component';
+import { NewsComponent } from './components/news/news.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { TransitionComponent } from './components/transition/transition.component';
 
-// 引入服務並配置服務
-import { StorageService } from './services/storage.service';
 
 // @NgModule裝飾器：接受一個元數據物件，告訴 Angular 如果編譯和啟動應用
 @NgModule({
   declarations: [  // 配置當前項目運行的組件
-    AppComponent,
-    SearchComponent,
-    TodoComponent
+    AppComponent, 
+    NewsComponent, 
+    HomeComponent, 
+    HeaderComponent, TransitionComponent,
   ],
   imports: [ // 配置當前模塊運行依賴的模塊
     BrowserModule,
     FormsModule
   ],
-  providers: [StorageService], // 配置項目所需要的服務
+  providers: [], // 配置項目所需要的服務
   bootstrap: [AppComponent]
   /* 指定應用的主視圖(稱為根組件)，通過引導Angular來啟動應用，這理一般寫的是根組件。*/
 })
