@@ -11,12 +11,19 @@ import { FormsModule } from '@angular/forms';
 
 // 根組件與其他組件
 import { AppComponent } from './app.component';
+import { NewsComponent } from './components/news/news.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { TransitionComponent } from './components/transition/transition.component';
 
 
 // @NgModule裝飾器：接受一個元數據物件，告訴 Angular 如果編譯和啟動應用
 @NgModule({
   declarations: [  // 配置當前項目運行的組件
     AppComponent, 
+    NewsComponent, 
+    HomeComponent, 
+    HeaderComponent, TransitionComponent,
   ],
   imports: [ // 配置當前模塊運行依賴的模塊
     BrowserModule,
