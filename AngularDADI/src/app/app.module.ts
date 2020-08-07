@@ -11,16 +11,24 @@ import { FormsModule } from '@angular/forms';
 
 // 根組件與其他組件
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { NewsComponent } from './components/news/news.component';
+import { ProductComponent } from './components/product/product.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 // @NgModule裝飾器：接受一個元數據物件，告訴 Angular 如果編譯和啟動應用
 @NgModule({
   declarations: [  // 配置當前項目運行的組件
-    AppComponent,
+    AppComponent, 
+    HomeComponent, 
+    NewsComponent, 
+    ProductComponent,
   ],
   imports: [ // 配置當前模塊運行依賴的模塊
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [], // 配置項目所需要的服務
   bootstrap: [AppComponent]

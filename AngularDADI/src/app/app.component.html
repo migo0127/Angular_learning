@@ -1,3 +1,11 @@
 <h1>這是app.component</h1>
 {{title}}
+<br>
+<br>
+<h1 class='nav'>
+    <a [routerLink]="['/home']" routerLinkActive='active'>首頁</a>
+    <a routerLink='/news' routerLinkActive='active'>新聞</a>
+    <a [routerLink]="['/product']" routerLinkActive='active'>產品</a>
+</h1>
 <hr />
+<router-outlet></router-outlet>
