@@ -1,0 +1,25 @@
+<br>
+<div>
+  <p>
+    名稱：<input type='text' [(ngModel)]="name"/>
+  </p>
+  <br>
+  <p>
+    內容：<input type='text' [(ngModel)]="content"/>
+  </p>
+  <br>
+  <p>
+    <button type='submit' (click)='addMessage()'>新增留言</button>
+  </p>
+</div>
+<br>
+
+<ng-container *ngFor='let item of message'>
+
+  <p>留言者：{{ item.name }}</p>
+  <br>
+  <p>內容：{{ item.content }}</p>
+  <br>
+  <p>時間：{{ item.date | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
+
+</ng-container>
